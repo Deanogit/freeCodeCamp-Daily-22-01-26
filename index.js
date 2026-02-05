@@ -11,23 +11,28 @@ function getAverageGrade(scores) {
 
   // if ()
 
-  const grades = {
-    97: 'A+',
-    93: 'A',
-    90: 'A-',
-    87: 'B+',
-    83: 'B',
-    80: 'B-',
-    77: 'C+',
-    73: 'C',
-    70: 'C-',
-    67: 'D+',
-    63: 'D',
-    60: 'D-',
-    0: 'F',
-  };
+  const grades = [
+    { score: 97, label: 'A+' },
+    { score: 93, label: 'A' },
+    { score: 90, label: 'A-' },
+    { score: 87, label: 'B+' },
+    { score: 83, label: 'B' },
+    { score: 80, label: 'B-' },
+    { score: 77, label: 'C+' },
+    { score: 73, label: 'C' },
+    { score: 70, label: 'C-' },
+    { score: 67, label: 'D+' },
+    { score: 63, label: 'D' },
+    { score: 60, label: 'D-' },
+    { score: 0, label: 'F' },
+  ];
 
-  console.log(grades[av] > av);
+  // find the first threshold that is less than or equal to the average
+  const finalGrade = grades.find((grade) => av >= grade.score);
+
+  return finalGrade ? finalGrade.label : 'F';
+
+  // console.log(grades[av])
 
   // return scores;
 }
